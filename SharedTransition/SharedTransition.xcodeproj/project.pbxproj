@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		3004EDFD1DF271C000187AF0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3004EDFC1DF271C000187AF0 /* DetailViewController.swift */; };
+		3004EE091DF2BAC000187AF0 /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3004EE081DF2BAC000187AF0 /* Transition.swift */; };
+		3004EE0A1DF2BAC000187AF0 /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3004EE081DF2BAC000187AF0 /* Transition.swift */; };
+		3004EE0B1DF2BAC000187AF0 /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3004EE081DF2BAC000187AF0 /* Transition.swift */; };
+		3004EE0D1DF2C01E00187AF0 /* SharedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3004EE0C1DF2C01E00187AF0 /* SharedView.swift */; };
+		3004EE0E1DF2C01E00187AF0 /* SharedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3004EE0C1DF2C01E00187AF0 /* SharedView.swift */; };
+		3004EE0F1DF2C01E00187AF0 /* SharedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3004EE0C1DF2C01E00187AF0 /* SharedView.swift */; };
 		3014CD371DF05D92006B5E83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3014CD361DF05D92006B5E83 /* AppDelegate.swift */; };
 		3014CD391DF05D92006B5E83 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3014CD381DF05D92006B5E83 /* ViewController.swift */; };
 		3014CD3C1DF05D92006B5E83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3014CD3A1DF05D92006B5E83 /* Main.storyboard */; };
@@ -15,12 +21,11 @@
 		3014CD411DF05D92006B5E83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3014CD3F1DF05D92006B5E83 /* LaunchScreen.storyboard */; };
 		3014CD4C1DF05D92006B5E83 /* SharedTransitionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3014CD4B1DF05D92006B5E83 /* SharedTransitionTests.swift */; };
 		3014CD571DF05D92006B5E83 /* SharedTransitionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3014CD561DF05D92006B5E83 /* SharedTransitionUITests.swift */; };
-		3014CD661DF05DE0006B5E83 /* ParamsHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3014CD651DF05DE0006B5E83 /* ParamsHolder.swift */; };
-		3014CD671DF05DE0006B5E83 /* ParamsHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3014CD651DF05DE0006B5E83 /* ParamsHolder.swift */; };
-		3014CD691DF0601D006B5E83 /* SharedViewTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3014CD681DF0601D006B5E83 /* SharedViewTransition.swift */; };
-		3014CD6A1DF0601D006B5E83 /* SharedViewTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3014CD681DF0601D006B5E83 /* SharedViewTransition.swift */; };
-		3014CD6D1DF06056006B5E83 /* SharedViewTransitionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3014CD6C1DF06056006B5E83 /* SharedViewTransitionDataSource.swift */; };
-		3014CD6E1DF06056006B5E83 /* SharedViewTransitionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3014CD6C1DF06056006B5E83 /* SharedViewTransitionDataSource.swift */; };
+		3022AFE11DF2C7E6002A625F /* TransitionNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3022AFE01DF2C7E6002A625F /* TransitionNavigationController.swift */; };
+		3022AFE21DF2C7E6002A625F /* TransitionNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3022AFE01DF2C7E6002A625F /* TransitionNavigationController.swift */; };
+		3022AFE31DF2C7E6002A625F /* TransitionNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3022AFE01DF2C7E6002A625F /* TransitionNavigationController.swift */; };
+		30557EB31DF309B90006AA07 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30557EB21DF309B90006AA07 /* CollectionViewCell.swift */; };
+		30557EB41DF309B90006AA07 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30557EB21DF309B90006AA07 /* CollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +47,8 @@
 
 /* Begin PBXFileReference section */
 		3004EDFC1DF271C000187AF0 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		3004EE081DF2BAC000187AF0 /* Transition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
+		3004EE0C1DF2C01E00187AF0 /* SharedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedView.swift; sourceTree = "<group>"; };
 		3014CD331DF05D92006B5E83 /* SharedTransition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SharedTransition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3014CD361DF05D92006B5E83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3014CD381DF05D92006B5E83 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,9 +62,8 @@
 		3014CD521DF05D92006B5E83 /* SharedTransitionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SharedTransitionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3014CD561DF05D92006B5E83 /* SharedTransitionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTransitionUITests.swift; sourceTree = "<group>"; };
 		3014CD581DF05D92006B5E83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3014CD651DF05DE0006B5E83 /* ParamsHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParamsHolder.swift; sourceTree = "<group>"; };
-		3014CD681DF0601D006B5E83 /* SharedViewTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedViewTransition.swift; sourceTree = "<group>"; };
-		3014CD6C1DF06056006B5E83 /* SharedViewTransitionDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedViewTransitionDataSource.swift; sourceTree = "<group>"; };
+		3022AFE01DF2C7E6002A625F /* TransitionNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionNavigationController.swift; sourceTree = "<group>"; };
+		30557EB21DF309B90006AA07 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +91,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3004EDFE1DF272EA00187AF0 /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				3004EE081DF2BAC000187AF0 /* Transition.swift */,
+			);
+			name = Transition;
+			sourceTree = "<group>";
+		};
 		3014CD2A1DF05D92006B5E83 = {
 			isa = PBXGroup;
 			children = (
@@ -108,10 +122,11 @@
 		3014CD351DF05D92006B5E83 /* SharedTransition */ = {
 			isa = PBXGroup;
 			children = (
+				30557EB51DF30FBC0006AA07 /* ViewController */,
+				30557EB11DF309980006AA07 /* View */,
+				3014CD6B1DF0602F006B5E83 /* Protocol */,
 				3014CD641DF05D9A006B5E83 /* Util */,
 				3014CD361DF05D92006B5E83 /* AppDelegate.swift */,
-				3014CD381DF05D92006B5E83 /* ViewController.swift */,
-				3004EDFC1DF271C000187AF0 /* DetailViewController.swift */,
 				3014CD3A1DF05D92006B5E83 /* Main.storyboard */,
 				3014CD3D1DF05D92006B5E83 /* Assets.xcassets */,
 				3014CD3F1DF05D92006B5E83 /* LaunchScreen.storyboard */,
@@ -141,9 +156,7 @@
 		3014CD641DF05D9A006B5E83 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				3014CD6B1DF0602F006B5E83 /* Protocol */,
-				3014CD651DF05DE0006B5E83 /* ParamsHolder.swift */,
-				3014CD681DF0601D006B5E83 /* SharedViewTransition.swift */,
+				3004EDFE1DF272EA00187AF0 /* Transition */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -151,9 +164,27 @@
 		3014CD6B1DF0602F006B5E83 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				3014CD6C1DF06056006B5E83 /* SharedViewTransitionDataSource.swift */,
+				3004EE0C1DF2C01E00187AF0 /* SharedView.swift */,
 			);
 			name = Protocol;
+			sourceTree = "<group>";
+		};
+		30557EB11DF309980006AA07 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				30557EB21DF309B90006AA07 /* CollectionViewCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		30557EB51DF30FBC0006AA07 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3014CD381DF05D92006B5E83 /* ViewController.swift */,
+				3004EDFC1DF271C000187AF0 /* DetailViewController.swift */,
+				3022AFE01DF2C7E6002A625F /* TransitionNavigationController.swift */,
+			);
+			name = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,11 +324,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3014CD6D1DF06056006B5E83 /* SharedViewTransitionDataSource.swift in Sources */,
+				30557EB31DF309B90006AA07 /* CollectionViewCell.swift in Sources */,
 				3014CD391DF05D92006B5E83 /* ViewController.swift in Sources */,
-				3014CD661DF05DE0006B5E83 /* ParamsHolder.swift in Sources */,
 				3004EDFD1DF271C000187AF0 /* DetailViewController.swift in Sources */,
-				3014CD691DF0601D006B5E83 /* SharedViewTransition.swift in Sources */,
+				3022AFE11DF2C7E6002A625F /* TransitionNavigationController.swift in Sources */,
+				3004EE0D1DF2C01E00187AF0 /* SharedView.swift in Sources */,
+				3004EE091DF2BAC000187AF0 /* Transition.swift in Sources */,
 				3014CD371DF05D92006B5E83 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,10 +338,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3004EE0A1DF2BAC000187AF0 /* Transition.swift in Sources */,
 				3014CD4C1DF05D92006B5E83 /* SharedTransitionTests.swift in Sources */,
-				3014CD671DF05DE0006B5E83 /* ParamsHolder.swift in Sources */,
-				3014CD6A1DF0601D006B5E83 /* SharedViewTransition.swift in Sources */,
-				3014CD6E1DF06056006B5E83 /* SharedViewTransitionDataSource.swift in Sources */,
+				3004EE0E1DF2C01E00187AF0 /* SharedView.swift in Sources */,
+				3022AFE21DF2C7E6002A625F /* TransitionNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,7 +349,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30557EB41DF309B90006AA07 /* CollectionViewCell.swift in Sources */,
+				3004EE0B1DF2BAC000187AF0 /* Transition.swift in Sources */,
 				3014CD571DF05D92006B5E83 /* SharedTransitionUITests.swift in Sources */,
+				3022AFE31DF2C7E6002A625F /* TransitionNavigationController.swift in Sources */,
+				3004EE0F1DF2C01E00187AF0 /* SharedView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

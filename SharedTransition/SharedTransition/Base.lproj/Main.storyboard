@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SharedTransition" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="SharedTransition" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -25,22 +25,40 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9Uf-4O-eRa">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cws-gY-w7I">
-                                    <size key="itemSize" width="94" height="79"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="cws-gY-w7I">
+                                    <size key="itemSize" width="90" height="79"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="8eU-Xd-gVi">
-                                        <rect key="frame" x="0.0" y="0.0" width="94" height="79"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewCell" id="8eU-Xd-gVi" customClass="CollectionViewCell" customModule="SharedTransition" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="79"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="94" height="79"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1PI-3f-GWn">
+                                                    <rect key="frame" x="0.0" y="0.0" width="91" height="79"/>
+                                                </imageView>
+                                            </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="1PI-3f-GWn" firstAttribute="top" secondItem="8eU-Xd-gVi" secondAttribute="top" id="94B-Ov-ody"/>
+                                            <constraint firstAttribute="trailing" secondItem="1PI-3f-GWn" secondAttribute="trailing" id="JVO-Br-fTQ"/>
+                                            <constraint firstItem="1PI-3f-GWn" firstAttribute="leading" secondItem="8eU-Xd-gVi" secondAttribute="leading" id="StM-Gn-Sc4"/>
+                                            <constraint firstAttribute="bottom" secondItem="1PI-3f-GWn" secondAttribute="bottom" id="qnD-av-iQo"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="1PI-3f-GWn" id="LkV-i4-a3c"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="quS-2d-WVx"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="pZb-DQ-vvu"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -53,17 +71,18 @@
                     </view>
                     <navigationItem key="navigationItem" id="Vge-gS-pc1"/>
                     <connections>
+                        <outlet property="collectionView" destination="9Uf-4O-eRa" id="6CN-PA-Kik"/>
                         <segue destination="FUS-aZ-4wF" kind="show" action="showDetailViewController:sender:" id="LX0-86-4tS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076" y="138.98050974512745"/>
+            <point key="canvasLocation" x="1206" y="-537"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="Ayb-bz-bZA">
             <objects>
-                <viewController id="FUS-aZ-4wF" customClass="DetailViewController" customModule="SharedTransition" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FUS-aZ-4wF" customClass="DetailViewController" customModule="SharedTransition" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Q1W-JJ-TIO"/>
                         <viewControllerLayoutGuide type="bottom" id="HTr-hh-3XY"/>
@@ -72,38 +91,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OdN-7v-R3b">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OdN-7v-R3b">
                                 <rect key="frame" x="0.0" y="64" width="375" height="133.5"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dXl-EB-zA8">
-                                <rect key="frame" x="0.0" y="205.5" width="375" height="167"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="dXl-EB-zA8" firstAttribute="height" secondItem="R9v-wI-DKm" secondAttribute="height" multiplier="1:4" id="2vr-2N-NYC"/>
-                            <constraint firstItem="OdN-7v-R3b" firstAttribute="top" secondItem="Q1W-JJ-TIO" secondAttribute="bottom" id="6pC-2x-BzY"/>
-                            <constraint firstItem="dXl-EB-zA8" firstAttribute="leading" secondItem="R9v-wI-DKm" secondAttribute="leading" id="DI9-lJ-1mH"/>
                             <constraint firstItem="OdN-7v-R3b" firstAttribute="height" secondItem="R9v-wI-DKm" secondAttribute="height" multiplier="1:5" id="FTU-76-LkQ"/>
-                            <constraint firstItem="dXl-EB-zA8" firstAttribute="top" secondItem="OdN-7v-R3b" secondAttribute="bottom" constant="8" id="Ine-2T-Th4"/>
-                            <constraint firstAttribute="trailing" secondItem="dXl-EB-zA8" secondAttribute="trailing" id="IwY-5b-yyC"/>
-                            <constraint firstAttribute="trailing" secondItem="OdN-7v-R3b" secondAttribute="trailing" id="O6w-9c-0sl"/>
-                            <constraint firstItem="OdN-7v-R3b" firstAttribute="leading" secondItem="R9v-wI-DKm" secondAttribute="leading" id="YZS-eR-rKM"/>
+                            <constraint firstItem="OdN-7v-R3b" firstAttribute="top" secondItem="Q1W-JJ-TIO" secondAttribute="bottom" id="R8k-9Z-0iJ"/>
+                            <constraint firstItem="OdN-7v-R3b" firstAttribute="leading" secondItem="R9v-wI-DKm" secondAttribute="leading" id="eBe-zj-llZ"/>
+                            <constraint firstAttribute="trailing" secondItem="OdN-7v-R3b" secondAttribute="trailing" id="hg5-fT-5NC"/>
+                            <constraint firstItem="OdN-7v-R3b" firstAttribute="width" secondItem="R9v-wI-DKm" secondAttribute="width" id="pr0-9p-nHf"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="OdN-7v-R3b" id="ssk-JE-IVE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5jW-HV-UAD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1856.8" y="138.98050974512745"/>
+            <point key="canvasLocation" x="2097" y="-560"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Transition Navigation Controller-->
         <scene sceneID="9Ss-Fb-QHg">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bQK-d8-JUp" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bQK-d8-JUp" customClass="TransitionNavigationController" customModule="SharedTransition" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xUO-wm-erP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
