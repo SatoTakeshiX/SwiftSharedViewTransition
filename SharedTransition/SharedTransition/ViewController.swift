@@ -92,7 +92,7 @@ extension ViewController : SharedView {
         }
         
         let imageView = UIImageView(image: selectedImageView.image)
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         imageView.frame = selectedImageView.convert(selectedImageView.frame, to: self.view)
         return imageView
     }

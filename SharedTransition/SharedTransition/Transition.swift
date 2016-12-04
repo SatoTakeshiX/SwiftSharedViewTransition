@@ -44,9 +44,7 @@ extension Transition {
         
         //遷移先のviewをaddSubViewする(fromVC.viewは最初からcontainerViewがsubviewとして持っている
         containerView.addSubview(toVC.view)
-        
-        //addSubViewでレイアウトが崩れるため再レイアウトする
-        toVC.view.layoutIfNeeded()
+
         
         //アニメーション用のimageViewを新しく作成する
         guard let sourceImageView = (fromVC as? SharedView)?.createImageView() else {
@@ -59,17 +57,19 @@ extension Transition {
         
         //遷移先のimageViewをaddSubviewする
         containerView.addSubview(sourceImageView)
-        
         toVC.view.alpha = 0.0
+        
+        //addSubViewでレイアウトが崩れるため再レイアウトする
+        toVC.view.layoutIfNeeded()
         
         UIView.animate(withDuration: transitionDuration(using: transitionContext), delay: 0.05,
                        options: UIViewAnimationOptions.curveEaseIn,
                        animations: {
                         
-                        let destinationImageFrame = destinationImageView.frame
+                       // let destinationImageFrame = destinationImageView.frame
                         //アニメーション開始
                         // 遷移もとのimageViewのframeとconteModeを遷移先のimageViewに代入
-                        sourceImageView.frame = CGRect.init(x: destinationImageFrame.origin.x, y: destinationImageFrame.origin.y + 64, width: destinationImageFrame.width, height: destinationImageFrame.height)//destinationImageView.frame
+                        sourceImageView.frame = destinationImageView.frame
                         sourceImageView.contentMode = destinationImageView.contentMode
                         
                         // cellのimageViewを非表示にする
@@ -77,9 +77,9 @@ extension Transition {
                         
                         toVC.view.alpha = 1.0
                         
+                        
         }, completion: {
             finished in
-
             
             //アニメーション終了
             transitionContext.completeTransition(true)
@@ -99,13 +99,16 @@ extension Transition {
         
         let containerView = transitionContext.containerView
         
-        //最初からcontainerViewがsubviewとして持っているfromVC.viewを削除
-        fromeVC.view.removeFromSuperview()
+        //前回遷移したさいのImageViewが残っているので一度全てを外す
+        containerView.subviews.forEach {
+            view in
+            view.removeFromSuperview()
+        }
         
         // toView -> fromViewの順にaddSubView
         containerView.addSubview(toVC.view)
         containerView.addSubview(fromeVC.view)
-        
+
         guard let sourceImageView = (fromeVC as? SharedView)?.createImageView() else {
             return
         }
@@ -121,13 +124,16 @@ extension Transition {
         
         cell.imageView.isHidden = true
         
-        
         containerView.addSubview(sourceImageView)
+        containerView.layoutIfNeeded()
+        toVC.view.layoutIfNeeded()
+        
         
         UIView.animate(withDuration: transitionDuration(using: transitionContext), delay: 0.05, options: UIViewAnimationOptions.curveEaseIn,
                        animations: {
-                        let destinationImageFrame = destinationImageView.frame
-                        sourceImageView.frame = CGRect.init(x: destinationImageFrame.origin.x, y: destinationImageFrame.origin.y + 64, width: destinationImageFrame.width, height: destinationImageFrame.height)
+                        sourceImageView.frame = destinationImageView.frame
+                        print(destinationImageView.frame)
+                        
                         fromeVC.view.alpha = 0.0
                         
         }, completion: {
@@ -138,6 +144,7 @@ extension Transition {
             cell.imageView.isHidden = false
             sourceImageView.removeFromSuperview()
             fromeVC.view.removeFromSuperview()
+            print(containerView.subviews)
             transitionContext.completeTransition(true)
         })
     }

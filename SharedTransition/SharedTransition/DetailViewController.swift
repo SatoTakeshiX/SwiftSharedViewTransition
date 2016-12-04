@@ -15,8 +15,6 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
 
         self.view.backgroundColor = UIColor.red
-        
-
     }
     override func viewDidAppear(_ animated: Bool) {
         self.view.layoutIfNeeded()
@@ -24,16 +22,6 @@ class DetailViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-//        self.navigationController?.navigationBar.shadowImage = UIImage()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-//        self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
-//        self.navigationController?.navigationBar.shadowImage = nil 
     }
 
 }
@@ -47,7 +35,7 @@ extension DetailViewController : SharedView {
         
         let imageView = UIImageView(image: self.image)
         imageView.contentMode = .scaleAspectFill
-        imageView.frame = detailImageView.frame
+        imageView.frame = detailImageView.convert(detailImageView.frame, to: self.view)
         return imageView
     }
 }
