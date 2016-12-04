@@ -109,11 +109,11 @@ extension Transition {
         containerView.addSubview(toVC.view)
         containerView.addSubview(fromeVC.view)
 
-        guard let sourceImageView = (fromeVC as? SharedView)?.createImageView() else {
+        guard let sourceImageView = (fromeVC as? DetailViewController)?.createImageView() else {
             return
         }
         
-        guard let destinationImageView = (toVC as? SharedView)?.createImageView() else {
+        guard let destinationImageView = (toVC as? ViewController)?.createImageView() else {
             return
         }
         
@@ -126,13 +126,10 @@ extension Transition {
         
         containerView.addSubview(sourceImageView)
         containerView.layoutIfNeeded()
-        toVC.view.layoutIfNeeded()
-        
         
         UIView.animate(withDuration: transitionDuration(using: transitionContext), delay: 0.05, options: UIViewAnimationOptions.curveEaseIn,
                        animations: {
                         sourceImageView.frame = destinationImageView.frame
-                        print(destinationImageView.frame)
                         
                         fromeVC.view.alpha = 0.0
                         
@@ -144,7 +141,6 @@ extension Transition {
             cell.imageView.isHidden = false
             sourceImageView.removeFromSuperview()
             fromeVC.view.removeFromSuperview()
-            print(containerView.subviews)
             transitionContext.completeTransition(true)
         })
     }
