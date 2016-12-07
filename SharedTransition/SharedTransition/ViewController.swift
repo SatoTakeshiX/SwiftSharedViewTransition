@@ -55,7 +55,7 @@ extension ViewController : UICollectionViewDelegate {
         self.selectedImageView = cell.imageView
         
         if let detailViewController = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
-            detailViewController.image = cell.imageView.image//self.selectedImageView?.image
+            detailViewController.image = self.selectedImageView?.image
             self.selectedIndexPath = indexPath
             self.navigationController?.pushViewController(detailViewController, animated: true)
         }
@@ -95,13 +95,6 @@ extension ViewController : SharedView {
         imageView.contentMode = .scaleAspectFit
         imageView.frame = selectedImageView.convert(selectedImageView.frame, to: self.view)
         return imageView
-    }
-    
-    var sharedView: UIView? {
-        get {
-            let cell = self.collectionView.cellForItem(at: (self.collectionView.indexPathsForSelectedItems?.first)!)
-            return cell
-        }
     }
 }
 

@@ -40,12 +40,6 @@ extension Transition {
             return
         }
         
-
-        let fromView = (fromVC as? SharedView)?.sharedView
-        let toView = (toVC as? SharedView)?.sharedView
-        
-        
-        
         let containerView = transitionContext.containerView
         
         //遷移先のviewをaddSubViewする(fromVC.viewは最初からcontainerViewがsubviewとして持っている
@@ -60,56 +54,32 @@ extension Transition {
         guard let destinationImageView = (toVC as? SharedView)?.createImageView() else {
             return
         }
-        // Take Snapshot of fomView
-        let snapshotView = fromView?.snapshotView(afterScreenUpdates: false)
-        snapshotView?.frame = containerView.convert((fromView?.frame)!, to: fromView?.superview)
-        fromView?.isHidden = true
         
-        // Setup the initial view states
-        //toVCの最終的なframeをfinalFrameForViewControllerで取得してframeにセットする
-        toVC.view.frame = transitionContext.finalFrame(for: toVC)
-
-        toVC.view.alpha = 0
-        toView?.isHidden = true
-        containerView.addSubview(toVC.view)
-        containerView.addSubview(snapshotView!)
+        //遷移先のimageViewをaddSubviewする
+        containerView.addSubview(sourceImageView)
+        toVC.view.alpha = 0.0
         
+        //addSubViewでレイアウトが崩れるため再レイアウトする
         toVC.view.layoutIfNeeded()
-        containerView.layoutIfNeeded()
-//        //遷移先のimageViewをaddSubviewする
-//        containerView.addSubview(sourceImageView)
-//        toVC.view.alpha = 0.0
-//        
-//        //addSubViewでレイアウトが崩れるため再レイアウトする
-//        toVC.view.layoutIfNeeded()
         
         UIView.animate(withDuration: transitionDuration(using: transitionContext), delay: 0.05,
                        options: UIViewAnimationOptions.curveEaseIn,
                        animations: {
                         
-//                       // let destinationImageFrame = destinationImageView.frame
-//                        //アニメーション開始
-//                        // 遷移もとのimageViewのframeとconteModeを遷移先のimageViewに代入
-//                        sourceImageView.frame = destinationImageView.frame
-//                        sourceImageView.contentMode = destinationImageView.contentMode
-//                        
-//                        // cellのimageViewを非表示にする
-//                        (fromVC as? SharedView)?.createImageView()?.isHidden = true
-//                        
-//                        toVC.view.alpha = 1.0
-                      
+                       // let destinationImageFrame = destinationImageView.frame
+                        //アニメーション開始
+                        // 遷移もとのimageViewのframeとconteModeを遷移先のimageViewに代入
+                        sourceImageView.frame = destinationImageView.frame
+                        sourceImageView.contentMode = destinationImageView.contentMode
+                        
+                        // cellのimageViewを非表示にする
+                        (fromVC as? SharedView)?.createImageView()?.isHidden = true
+                        
                         toVC.view.alpha = 1.0
-                        // Move the SnapshotView
-                        snapshotView?.frame = (toView?.frame)!//containerView.convert((toView?.frame)!, from: toView?.superview)
-                      
                         
                         
         }, completion: {
             finished in
-            
-            toView?.isHidden = false ;
-            fromView?.isHidden = false;
-           // snapshotView?.removeFromSuperview()
             
             //アニメーション終了
             transitionContext.completeTransition(true)

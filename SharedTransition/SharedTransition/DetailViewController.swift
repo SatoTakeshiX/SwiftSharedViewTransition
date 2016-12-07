@@ -38,11 +38,5 @@ extension DetailViewController : SharedView {
         imageView.frame = detailImageView.convert(detailImageView.frame, to: self.view)
         return imageView
     }
-    
-    var sharedView: UIView? {
-        get {
-            return self.imageView
-        }
-    }
 }
 

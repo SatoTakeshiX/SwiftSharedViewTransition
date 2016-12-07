@@ -10,5 +10,4 @@ import Foundation
 import UIKit
 protocol SharedView {
     func createImageView() -> UIImageView?
-    var sharedView:UIView? { get }
 }
