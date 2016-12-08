@@ -62,6 +62,10 @@ extension Transition {
         //addSubViewでレイアウトが崩れるため再レイアウトする
         toVC.view.layoutIfNeeded()
         
+        if let detailVC = toVC as? DetailViewController {
+            detailVC.image = sourceImageView.image
+        }
+        
         UIView.animate(withDuration: transitionDuration(using: transitionContext), delay: 0.05,
                        options: UIViewAnimationOptions.curveEaseIn,
                        animations: {
@@ -69,7 +73,12 @@ extension Transition {
                        // let destinationImageFrame = destinationImageView.frame
                         //アニメーション開始
                         // 遷移もとのimageViewのframeとconteModeを遷移先のimageViewに代入
-                        sourceImageView.frame = destinationImageView.frame
+                        sourceImageView.frame = sourceImageView.convert(destinationImageView.frame, to: destinationImageView) //destinationImageView.frame
+                        
+                        
+                        sourceImageView.frame = toVC.view.convert(destinationImageView.frame, to: toVC.view)
+                        
+                        
                         sourceImageView.contentMode = destinationImageView.contentMode
                         
                         // cellのimageViewを非表示にする
@@ -80,6 +89,12 @@ extension Transition {
                         
         }, completion: {
             finished in
+            
+            if transitionContext.transitionWasCancelled {
+                toVC.view.removeFromSuperview()
+            }
+            
+            sourceImageView.removeFromSuperview()
             
             //アニメーション終了
             transitionContext.completeTransition(true)

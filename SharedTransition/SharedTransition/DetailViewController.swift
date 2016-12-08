@@ -15,9 +15,27 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
 
         self.view.backgroundColor = UIColor.red
+        self.imageView.image = image
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        
+    }
+  
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
         self.view.layoutIfNeeded()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+                self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
+        
     }
 
     override func didReceiveMemoryWarning() {
